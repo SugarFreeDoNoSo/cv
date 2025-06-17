@@ -1,0 +1,67 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Ejecuta en pushes a la rama principal
+  push:
+    branches: [ main ]
+  # Permite ejecutar manualmente desde la pestaña Actions
+  workflow_dispatch:
+
+# Da permisos GITHUB_TOKEN para hacer deploy a Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite un deploy concurrente, cancela el anterior si hay uno en progreso
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+env:
+  BUILD_PATH: "." # ruta por defecto para el build, cambia si tu código está en una subcarpeta
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+
+      - name: Install dependencies
+        run: bun install
+        working-directory: ${{ env.BUILD_PATH }}
+
+      - name: Build with Astro
+        run: |
+          bun run build \
+            --site "${{ steps.pages.outputs.origin }}" \
+            --base "${{ steps.pages.outputs.base_path }}"
+        working-directory: ${{ env.BUILD_PATH }}
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ${{ env.BUILD_PATH }}/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
