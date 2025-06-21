@@ -109,25 +109,25 @@ const {
             /* Custom animations with exponential easing */
             @keyframes gradient-x {
                 0% {
-                    transform: translateX(-50%) scale(1);
+                    transform: translateX(-40%) scale(1);
                 }
                 10% {
-                    transform: translateX(-30%) scale(1.02);
+                    transform: translateX(-20%) scale(1.01);
                 }
                 25% {
-                    transform: translateX(0%) scale(1.05);
+                    transform: translateX(0%) scale(1.02);
                 }
                 50% {
-                    transform: translateX(35%) scale(1.08);
+                    transform: translateX(20%) scale(1.04);
                 }
                 75% {
-                    transform: translateX(45%) scale(1.09);
+                    transform: translateX(30%) scale(1.05);
                 }
                 90% {
-                    transform: translateX(48%) scale(1.095);
+                    transform: translateX(38%) scale(1.055);
                 }
                 100% {
-                    transform: translateX(50%) scale(1.1);
+                    transform: translateX(40%) scale(1.06);
                 }
             }
 
@@ -168,7 +168,7 @@ const {
                     transform: translateY(0);
                 }
                 50% {
-                    transform: translateY(-20px);
+                    transform: translateY(-15px);
                 }
             }
 
@@ -178,7 +178,7 @@ const {
                     transform: translateY(0px);
                 }
                 50% {
-                    transform: translateY(-10px);
+                    transform: translateY(-8px);
                 }
             }
 
@@ -195,6 +195,7 @@ const {
             /* Animation classes */
             .animate-gradient-x {
                 background-size: 200% 200%;
+                will-change: transform;
                 animation: gradient-x 20s cubic-bezier(0.25, 0.1, 0.25, 1)
                     infinite alternate;
             }
@@ -210,19 +211,23 @@ const {
             }
 
             .animate-spin-slow {
-                animation: spin-slow 30s cubic-bezier(0.1, 0.7, 0.1, 1) infinite;
+                will-change: transform;
+                animation: spin-slow 60s cubic-bezier(0.1, 0.7, 0.1, 1) infinite;
             }
 
             .animate-bounce-slow {
+                will-change: transform;
                 animation: bounce-slow 6s cubic-bezier(0.68, -0.55, 0.265, 1.55)
                     infinite;
             }
 
             .animate-float {
+                will-change: transform;
                 animation: float 6s ease-in-out infinite;
             }
 
             .animate-glow {
+                will-change: box-shadow;
                 animation: glow 2s ease-in-out infinite alternate;
             }
 
@@ -464,12 +469,19 @@ const {
 
             /* Reduced motion preferences */
             @media (prefers-reduced-motion: reduce) {
-                *,
-                *::before,
-                *::after {
+                .animate-gradient-x,
+                .animate-spin-slow,
+                .animate-bounce-slow,
+                .animate-float,
+                .animate-glow {
+                    animation: none !important;
+                }
+
+                .animate-fade-in,
+                .animate-slide-up,
+                .skill-item {
                     animation-duration: 0.01ms !important;
                     animation-iteration-count: 1 !important;
-                    transition-duration: 0.01ms !important;
                 }
             }
         </style>
