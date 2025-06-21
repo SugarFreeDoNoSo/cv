@@ -5,6 +5,7 @@ import Section from "../components/Section";
 import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
 import Education from "../components/Education";
+import LazyPage from "../components/LazyPage";
 
 // Datos del CV
 const personalInfo = {
@@ -185,7 +186,7 @@ const education = [
 
         <!-- Main content -->
         <div class="relative z-10 py-12 px-4 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-4xl space-y-10" id="modern-view">
+            <div class="mx-auto max-w-4xl space-y-10 snap-y snap-mandatory overflow-y-auto h-screen" id="modern-view">
                 <!-- Header with animated elements -->
                 <div class="text-center space-y-6 animate-fade-in">
                     <div class="relative">
@@ -222,16 +223,16 @@ const education = [
                 </div>
 
                 <!-- Contact Information with glass morphism -->
-                <div class="animate-slide-up" style="animation-delay: 0.2s;">
+                <LazyPage delay={0.2}>
                     <ContactInfo
                         email={personalInfo.email}
                         phone={personalInfo.phone}
                         location={personalInfo.location}
                     />
-                </div>
+                </LazyPage>
 
                 <!-- Professional Profile -->
-                <div class="animate-slide-up" style="animation-delay: 0.4s;">
+                <LazyPage delay={0.4}>
                     <Section title="Perfil Profesional">
                         <div class="relative">
                             <p
@@ -246,35 +247,35 @@ const education = [
                             </div>
                         </div>
                     </Section>
-                </div>
+                </LazyPage>
 
                 <!-- Technical Skills -->
-                <div class="animate-slide-up" style="animation-delay: 0.6s;">
+                <LazyPage delay={0.6}>
                     <Section title="Habilidades Técnicas Clave">
                         <Skills skillCategories={skillCategories} />
                     </Section>
-                </div>
+                </LazyPage>
 
                 <!-- Work Experience -->
-                <div class="animate-slide-up" style="animation-delay: 0.8s;">
+                <LazyPage delay={0.8}>
                     <Section title="Experiencia Laboral">
                         <WorkExperience
                             experiences={workExperiences}
                         />
                     </Section>
-                </div>
+                </LazyPage>
 
                 <!-- Education -->
-                <div class="animate-slide-up" style="animation-delay: 1s;">
+                <LazyPage delay={1}>
                     <Section title="Educación">
                         <Education education={education} />
                     </Section>
-                </div>
+                </LazyPage>
 
                 <!-- Action buttons with hover effects -->
+                <LazyPage delay={1.2}>
                 <div
-                    class="flex flex-col sm:flex-row gap-4 justify-center no-print animate-slide-up"
-                    style="animation-delay: 1.2s;"
+                    class="flex flex-col sm:flex-row gap-4 justify-center no-print"
                 >
                     <button
                         onclick="window.print()"
@@ -326,6 +327,7 @@ const education = [
                         </div>
                     </button>
                 </div>
+                </LazyPage>
 
                 <!-- Footer -->
                 <div
