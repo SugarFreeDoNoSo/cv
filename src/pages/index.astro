@@ -227,13 +227,12 @@ const education = [
                         email={personalInfo.email}
                         phone={personalInfo.phone}
                         location={personalInfo.location}
-                        client:load
                     />
                 </div>
 
                 <!-- Professional Profile -->
                 <div class="animate-slide-up" style="animation-delay: 0.4s;">
-                    <Section title="Perfil Profesional" client:load>
+                    <Section title="Perfil Profesional">
                         <div class="relative">
                             <p
                                 class="text-base leading-relaxed text-adaptive p-6 rounded-xl bg-adaptive"
@@ -251,25 +250,24 @@ const education = [
 
                 <!-- Technical Skills -->
                 <div class="animate-slide-up" style="animation-delay: 0.6s;">
-                    <Section title="Habilidades Técnicas Clave" client:load>
-                        <Skills skillCategories={skillCategories} client:load />
+                    <Section title="Habilidades Técnicas Clave">
+                        <Skills skillCategories={skillCategories} />
                     </Section>
                 </div>
 
                 <!-- Work Experience -->
                 <div class="animate-slide-up" style="animation-delay: 0.8s;">
-                    <Section title="Experiencia Laboral" client:load>
+                    <Section title="Experiencia Laboral">
                         <WorkExperience
                             experiences={workExperiences}
-                            client:load
                         />
                     </Section>
                 </div>
 
                 <!-- Education -->
                 <div class="animate-slide-up" style="animation-delay: 1s;">
-                    <Section title="Educación" client:load>
-                        <Education education={education} client:load />
+                    <Section title="Educación">
+                        <Education education={education} />
                     </Section>
                 </div>
 
