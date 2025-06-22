@@ -1,11 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import ContactInfo from "../components/ContactInfo";
+import Education from "../components/Education";
+import LazyPage from "../components/LazyPage";
 import Section from "../components/Section";
 import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
-import Education from "../components/Education";
-import LazyPage from "../components/LazyPage";
+import Layout from "../layouts/Layout.astro";
 
 // Datos del CV
 const personalInfo = {
@@ -152,10 +152,10 @@ const education = [
 
 <Layout>
     <!-- Background with animated gradient -->
-    <div class="min-h-screen relative overflow-hidden">
+    <div class="min-h-screen relative overflow-visible">
         <!-- Animated background gradient -->
         <div
-            class="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 animate-gradient-x"
+            class="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900"
         >
         </div>
         <div
@@ -185,54 +185,57 @@ const education = [
         </div>
 
         <!-- Main content -->
-        <div class="relative z-10 py-12 px-4 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-4xl space-y-10 snap-y snap-mandatory overflow-y-auto h-screen" id="modern-view">
+        <div
+            class="relative z-10 py-12 px-4 sm:px-6 lg:px-8 snap-y snap-mandatory overflow-y-auto h-screen"
+        >
+            <div class="mx-auto max-w-4xl space-y-10" id="modern-view">
                 <!-- Header with animated elements -->
-                <div class="text-center space-y-6 animate-fade-in">
-                    <div class="relative">
-                        <!-- Profile picture placeholder with gradient border -->
-                        <div
-                            class="mx-auto w-32 h-32 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 p-1 shadow-2xl"
-                        >
+                <LazyPage client:visible>
+                    <div class="text-center space-y-6 animate-fade-in">
+                        <div class="relative">
+                            <!-- Profile picture placeholder with gradient border -->
                             <div
-                                class="w-full h-full rounded-full bg-slate-800 flex items-center justify-center"
+                                class="mx-auto w-32 h-32 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 p-1 shadow-2xl"
                             >
-                                <button
-                                    id="toggleView"
-                                    class="text-4xl font-bold text-adaptive-heading hover:scale-110 hover:rotate-12 hover:bg-white/10 rounded-lg px-2 py-1 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400/50 active:scale-95"
-                                    title="Alternar vista Markdown">MD</button
+                                <div
+                                    class="w-full h-full rounded-full bg-slate-800 flex items-center justify-center"
                                 >
+                                    <button
+                                        id="toggleView"
+                                        class="text-4xl font-bold text-adaptive-heading rounded-lg px-2 py-1 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400/50 active:scale-95"
+                                        title="Alternar vista Markdown"
+                                        >MD</button
+                                    >
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="space-y-4">
-                        <h1
-                            class="text-5xl sm:text-6xl font-bold text-adaptive-heading leading-tight"
-                        >
-                            {personalInfo.name}
-                        </h1>
-                        <div class="inline-block">
-                            <h2
-                                class="text-xl sm:text-2xl text-adaptive-accent font-medium px-6 py-2 rounded-full bg-adaptive"
+                        <div class="space-y-4">
+                            <h1
+                                class="text-5xl sm:text-6xl font-bold text-adaptive-heading leading-tight"
                             >
-                                {personalInfo.title}
-                            </h2>
+                                {personalInfo.name}
+                            </h1>
+                            <div class="inline-block">
+                                <h2
+                                    class="text-xl sm:text-2xl text-adaptive-accent font-medium px-6 py-2 rounded-full bg-adaptive"
+                                >
+                                    {personalInfo.title}
+                                </h2>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <!-- Contact Information with glass morphism -->
 
-                <!-- Contact Information with glass morphism -->
-                <LazyPage delay={0.2}>
-                    <ContactInfo
-                        email={personalInfo.email}
-                        phone={personalInfo.phone}
-                        location={personalInfo.location}
-                    />
+                        <ContactInfo
+                            email={personalInfo.email}
+                            phone={personalInfo.phone}
+                            location={personalInfo.location}
+                        />
+                    </div>
                 </LazyPage>
 
                 <!-- Professional Profile -->
-                <LazyPage delay={0.4}>
+                <LazyPage client:visible>
                     <Section title="Perfil Profesional">
                         <div class="relative">
                             <p
@@ -250,84 +253,83 @@ const education = [
                 </LazyPage>
 
                 <!-- Technical Skills -->
-                <LazyPage delay={0.6}>
+                <LazyPage client:visible>
                     <Section title="Habilidades Técnicas Clave">
                         <Skills skillCategories={skillCategories} />
                     </Section>
                 </LazyPage>
 
                 <!-- Work Experience -->
-                <LazyPage delay={0.8}>
+                <LazyPage client:visible>
                     <Section title="Experiencia Laboral">
-                        <WorkExperience
-                            experiences={workExperiences}
-                        />
+                        <WorkExperience experiences={workExperiences} />
                     </Section>
                 </LazyPage>
 
                 <!-- Education -->
-                <LazyPage delay={1}>
+                <LazyPage client:visible>
                     <Section title="Educación">
                         <Education education={education} />
                     </Section>
                 </LazyPage>
 
                 <!-- Action buttons with hover effects -->
-                <LazyPage delay={1.2}>
-                <div
-                    class="flex flex-col sm:flex-row gap-4 justify-center no-print"
-                >
-                    <button
-                        onclick="window.print()"
-                        class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium btn-adaptive rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transform transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-500/50"
-                    >
-                        <svg
-                            class="mr-3 h-5 w-5 group-hover:animate-bounce"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
-                            ></path>
-                        </svg>
-                        Imprimir CV
-                        <div
-                            class="absolute inset-0 rounded-full bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-300"
-                        >
-                        </div>
-                    </button>
 
-                    <button
-                        onclick="navigator.share && navigator.share({title: 'CV - Matías Donoso Q.', url: window.location.href})"
-                        class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium btn-adaptive rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transform transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-emerald-500/50"
+                <!-- <LazyPage client:visible delay={1.2}>
+                    <div
+                        class="flex flex-col sm:flex-row gap-4 justify-center no-print"
                     >
-                        <svg
-                            class="mr-3 h-5 w-5 group-hover:animate-pulse"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
+                        <button
+                            onclick="window.print()"
+                            class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium btn-adaptive rounded-full shadow-xl   transform transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-500/50"
                         >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
-                            ></path>
-                        </svg>
-                        Compartir
-                        <div
-                            class="absolute inset-0 rounded-full bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-300"
+                            <svg
+                                class="mr-3 h-5 w-5 "
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
+                                ></path>
+                            </svg>
+                            Imprimir CV
+                            <div
+                                class="absolute inset-0 rounded-full bg-white/20 scale-0  transition-transform duration-300"
+                            >
+                            </div>
+                        </button>
+
+                        <button
+                            onclick="navigator.share && navigator.share({title: 'CV - Matías Donoso Q.', url: window.location.href})"
+                            class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium btn-adaptive rounded-full shadow-xl   transform transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-emerald-500/50"
                         >
-                        </div>
-                    </button>
-                </div>
-                </LazyPage>
+                            <svg
+                                class="mr-3 h-5 w-5 "
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
+                                ></path>
+                            </svg>
+                            Compartir
+                            <div
+                                class="absolute inset-0 rounded-full bg-white/20 scale-0  transition-transform duration-300"
+                            >
+                            </div>
+                        </button>
+                    </div>
+                </LazyPage> -->
 
                 <!-- Footer -->
                 <div
@@ -361,7 +363,7 @@ const education = [
                     <!-- Close button -->
                     <button
                         id="closeMarkdown"
-                        class="absolute top-4 right-4 z-10 w-8 h-8 bg-gray-700 hover:bg-gray-600 text-white rounded-full flex items-center justify-center transition-colors duration-200"
+                        class="absolute top-4 right-4 z-10 w-8 h-8 bg-gray-700 text-white rounded-full flex items-center justify-center transition-colors duration-200"
                         title="Cerrar vista Markdown"
                     >
                         ×
@@ -372,312 +374,11 @@ const education = [
                     >
                         <pre
                             class="whitespace-pre-wrap text-green-300 selection:bg-green-400 selection:text-gray-900"
-                            id="markdown-content"># Matías Donoso Q.
-## Desarrollador de Software
-
-**Correo:** matias.donoso.q@gmail.com
-**Número:** +569 7756 2527
-**Ubicación:** Santiago de Chile
-
----
-
-## Perfil Profesional
-
-Ingeniero de Software proactivo y orientado a resultados, con sólida experiencia en programación de alto rendimiento, inteligencia artificial y desarrollo de software empresarial. Especializado en la implementación de soluciones tecnológicas innovadoras y eficientes. Demostrada capacidad para el trabajo autónomo y colaborativo, liderando equipos y fomentando ambientes constructivos. Alta adaptabilidad y aprendizaje rápido de nuevas tecnologías, con un enfoque analítico para la resolución de problemas complejos.
-
-## Habilidades Técnicas Clave
-
-### Lenguajes
-- Python
-- TypeScript
-- Rust
-- SQL
-
-### Frameworks/Librerías
-- React.js
-- Next.js
-- Nest.js
-- Django
-- FastAPI
-- Flask
-- Celery
-- Electron.js
-- PyTorch
-- TensorFlow
-
-### Bases de Datos
-- PostgreSQL
-- SQLite
-- MySQL
-- NoSQL (KV Stores)
-
-### Cloud/DevOps
-- AWS
-- GCP
-- Docker
-- Kubernetes
-- CI/CD
-- Serverless
-- Lambda
-- S3
-
-### Herramientas/Otros
-- Git
-- OpenAPI
-- GraphQL
-- API Rest
-- Sentry
-- Firebase
-- Linux
-- OpenFOAM
-- CUDA
-
-## Experiencia Laboral
-
-### Maifud | Programador Full Stack
-**Marzo 2025 - Actual**
-
-- Liderazgo técnico en el desarrollo y mantenimiento integral (frontend/backend) de la plataforma.
-- Provisión de soporte TI y resolución de incidencias operativas.
-
-### GetAgil | Programador Full Stack
-**Octubre 2024 - Enero 2025**
-
-- Responsable de la arquitectura y desarrollo del sistema completo, gestionando servicios frontend (React) y backend (Node.js).
-- Administración de bases de datos relacionales y NoSQL (KV).
-- Diseño, implementación y mantenimiento de funciones serverless, incluyendo optimizaciones de alto rendimiento a bajo nivel (Rust).
-
-**Logros Destacados:**
-- Optimización crítica de API: Incremento de velocidad x10, escalabilidad total y reducción de costos operativos en ~99.9%.
-- Estabilización del servicio: Reducción de la tasa de fallos del 10% al 0% mediante la implementación de soluciones automatizadas.
-
-### Busho | Programador Full Stack
-**Mayo 2024 - Agosto 2024 | Santiago de Chile**
-
-- Asunción de liderazgo técnico para estructurar y dirigir el desarrollo en un equipo de reciente formación.
-- Implementación de frameworks, tecnologías clave y definición de buenas prácticas (CI/CD, Agile).
-- Fomento de la cohesión del equipo y mantenimiento de un ambiente de trabajo productivo.
-
-### Castirgalu | Desarrollador Senior de Software
-**Abril 2023 - Abril 2024 | Remoto (España)**
-
-- Resolución de desafíos técnicos complejos en física moderna aplicada a la metalurgia mediante simulaciones computacionales.
-- Contribución técnica a proyectos de investigación académica de alto impacto internacional.
-
-### S3chile | Desarrollador Jr. Full Stack
-**Agosto 2022 - Mayo 2023 | Santiago de Chile**
-
-- Participación activa en el ciclo completo de desarrollo de software, adquiriendo experiencia en diversas tecnologías y metodologías.
-
-### S3 Chile | Practicante de Ciencia de Datos
-**Julio 2022 - Agosto 2022 | Santiago de Chile**
-
-- Aplicación práctica de técnicas de Deep Learning generativo en un entorno profesional.
-
-## Educación
-
-### Universidad de Santiago de Chile | Licenciatura en Ciencia de la Computación
-**2018 - 2024 | Santiago de Chile**
-
-Formación sólida en fundamentos de ciencias de la computación, algoritmos, estructuras de datos y paradigmas de programación. Destacada habilidad para la aplicación práctica del conocimiento teórico en la resolución de problemas.
-
----
-
-*CV generado automáticamente • 2025*</pre>
+                            id="markdown-content">
+                        </pre>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </Layout>
-
-<script>
-    // Toggle between modern and markdown views
-    document.addEventListener("DOMContentLoaded", function () {
-        const mdToggle = document.getElementById("toggleView");
-        const modernView = document.getElementById("modern-view");
-        const markdownView = document.getElementById("markdown-view");
-        let isMarkdownView = false;
-
-        const closeMarkdown = document.getElementById("closeMarkdown");
-
-        function showMarkdownView() {
-            isMarkdownView = true;
-            modernView?.classList.add("hidden");
-            markdownView?.classList.remove("hidden");
-            mdToggle?.setAttribute("title", "Volver a vista moderna");
-            mdToggle?.classList.add("bg-green-400/20");
-        }
-
-        function showModernView() {
-            isMarkdownView = false;
-            modernView?.classList.remove("hidden");
-            markdownView?.classList.add("hidden");
-            mdToggle?.setAttribute("title", "Alternar vista Markdown");
-            mdToggle?.classList.remove("bg-green-400/20");
-        }
-
-        mdToggle?.addEventListener("click", function () {
-            if (isMarkdownView) {
-                showModernView();
-            } else {
-                showMarkdownView();
-            }
-        });
-
-        closeMarkdown?.addEventListener("click", function () {
-            showModernView();
-        });
-    });
-</script>
-
-<style>
-    /* Custom animations with exponential easing */
-    @keyframes gradient-x {
-        0% {
-            transform: translateX(-50%) scale(1);
-        }
-        15% {
-            transform: translateX(-25%) scale(1.02);
-        }
-        35% {
-            transform: translateX(10%) scale(1.05);
-        }
-        60% {
-            transform: translateX(35%) scale(1.07);
-        }
-        80% {
-            transform: translateX(45%) scale(1.08);
-        }
-        95% {
-            transform: translateX(48%) scale(1.09);
-        }
-        100% {
-            transform: translateX(50%) scale(1.1);
-        }
-    }
-
-    @keyframes gradient-pulse {
-        0% {
-            opacity: 0.2;
-        }
-        25% {
-            opacity: 0.4;
-        }
-        60% {
-            opacity: 0.6;
-        }
-        85% {
-            opacity: 0.65;
-        }
-        100% {
-            opacity: 0.7;
-        }
-    }
-
-    @keyframes fade-in {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes slide-up {
-        from {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes spin-slow {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes bounce-slow {
-        0%,
-        100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-20px);
-        }
-    }
-
-    .animate-gradient-x {
-        background-size: 200% 200%;
-        animation: gradient-x 20s cubic-bezier(0.25, 0.1, 0.25, 1) infinite
-            alternate;
-    }
-
-    .animate-fade-in {
-        animation: fade-in 0.8s ease-out forwards;
-        opacity: 0;
-    }
-
-    .animate-slide-up {
-        animation: slide-up 0.8s ease-out forwards;
-        opacity: 0;
-    }
-
-    .animate-spin-slow {
-        animation: spin-slow 35s cubic-bezier(0.1, 0.7, 0.1, 1) infinite;
-    }
-
-    .animate-bounce-slow {
-        animation: bounce-slow 8s cubic-bezier(0.68, -0.55, 0.265, 1.55)
-            infinite;
-    }
-
-    /* Glass morphism effects */
-    .backdrop-blur-sm {
-        backdrop-filter: blur(8px);
-    }
-
-    @media print {
-        body {
-            background: white !important;
-        }
-
-        .absolute,
-        .bg-gradient-to-br,
-        .bg-gradient-to-tr {
-            background: white !important;
-        }
-
-        .shadow,
-        .shadow-sm,
-        .shadow-xl,
-        .shadow-2xl {
-            box-shadow: none !important;
-        }
-
-        .border {
-            border-color: #e5e7eb !important;
-        }
-
-        .text-white,
-        .text-slate-100,
-        .text-blue-200,
-        .text-slate-300 {
-            color: #1f2937 !important;
-        }
-
-        .bg-gradient-to-r {
-            background: transparent !important;
-            color: #1f2937 !important;
-        }
-    }
-</style>

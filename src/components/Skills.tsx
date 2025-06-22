@@ -23,14 +23,14 @@ export default function Skills({ skillCategories }: SkillsProps) {
           {/* Category container */}
           <div className="relative overflow-hidden rounded-2xl bg-adaptive p-6 transition-all duration-500">
             {/* Decorative background elements */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl opacity-50 group-hover:opacity-80 transition-opacity duration-700"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-cyan-500/10 to-emerald-500/10 rounded-full blur-2xl opacity-30 group-hover:opacity-60 transition-opacity duration-700"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl opacity-50  transition-opacity duration-700"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-cyan-500/10 to-emerald-500/10 rounded-full blur-2xl opacity-30  transition-opacity duration-700"></div>
 
             {/* Category header */}
             <div className="relative z-10 mb-6">
               <div className="flex items-center gap-3 mb-4">
                 {/* Category icon */}
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg   transition-all duration-300">
                   <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                 </div>
 
@@ -41,7 +41,7 @@ export default function Skills({ skillCategories }: SkillsProps) {
 
                 {/* Skills count badge */}
                 <div className="ml-auto">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-adaptive text-adaptive-accent group-hover:scale-105 transition-all duration-300">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-adaptive text-adaptive-accent  transition-all duration-300">
                     {category.skills.length} skills
                   </span>
                 </div>
@@ -50,7 +50,7 @@ export default function Skills({ skillCategories }: SkillsProps) {
               {/* Decorative line */}
               <div className="relative">
                 <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-                <div className="absolute inset-0 h-px bg-gradient-to-r from-blue-400/60 via-purple-400/60 to-cyan-400/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 h-px bg-gradient-to-r from-blue-400/60 via-purple-400/60 to-cyan-400/60 opacity-0  transition-opacity duration-500"></div>
               </div>
             </div>
 
@@ -66,7 +66,7 @@ export default function Skills({ skillCategories }: SkillsProps) {
                 >
                   <Badge
                     variant="secondary"
-                    className="relative group/skill px-4 py-2 text-sm font-medium bg-adaptive hover:from-blue-500/20 hover:to-purple-500/20 text-adaptive hover:border-blue-400/50 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 cursor-default"
+                    className="relative group/skill px-4 py-2 text-sm font-medium bg-adaptive   text-adaptive     transition-all duration-300 cursor-default"
                   >
                     {/* Skill text */}
                     <span className="relative z-10 group-hover/skill:text-adaptive-accent transition-colors duration-300">
@@ -93,7 +93,7 @@ export default function Skills({ skillCategories }: SkillsProps) {
           </div>
 
           {/* Category hover glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-purple-400/0 to-cyan-400/0 group-hover:from-blue-400/10 group-hover:via-purple-400/10 group-hover:to-cyan-400/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700 -z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-purple-400/0 to-cyan-400/0    rounded-2xl blur-xl opacity-0  transition-all duration-700 -z-10"></div>
         </div>
       ))}
     </div>

@@ -9,7 +9,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://SugarFreeDoNoSo.github.io",
   base: "/cv",
-  integrations: [preact()],
+  integrations: [preact({ compat: true })],
 
   vite: {
     plugins: [tailwindcss()],

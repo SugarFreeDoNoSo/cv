@@ -1,12 +1,9 @@
-import { JSX } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
 
 interface LazyPageProps {
-  children: JSX.Element | JSX.Element[];
-  delay?: number; // animation delay in seconds
+  children: Element | Element[];
 }
-
-export default function LazyPage({ children, delay = 0 }: LazyPageProps) {
+export default function LazyPage({ children }: LazyPageProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -20,16 +17,19 @@ export default function LazyPage({ children, delay = 0 }: LazyPageProps) {
           }
         });
       },
-      { threshold: 0.25 }
+      { threshold: 0.25 },
     );
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
   }, []);
 
   return (
-    <div ref={ref} className="min-h-screen flex items-center justify-center snap-start">
+    <div ref={ref} className="min-h-screen py-20 snap-start overflow-visible">
       {isVisible && (
-        <div className="w-full animate-slide-up" style={{ animationDelay: `${delay}s` }}>
+        <div
+          className="w-full animate-slide-up relative z-0"
+          style={{ animationDelay: `0.2s` }}
+        >
           {children}
         </div>
       )}

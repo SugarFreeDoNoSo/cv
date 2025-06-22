@@ -12,11 +12,11 @@ export default function ContactInfo({
   location,
 }: ContactInfoProps) {
   return (
-    <Card className="w-full bg-adaptive shadow-2xl hover:shadow-3xl transition-all duration-500">
+    <Card className="w-full bg-adaptive shadow-2xl  transition-all duration-500">
       <CardContent className="p-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:justify-between lg:items-center">
-          <div className="group flex items-center gap-4 hover:scale-105 transition-transform duration-300">
-            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+          <div className="group flex items-center gap-4  transition-transform duration-300">
+            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg  transition-shadow duration-300">
               <svg
                 className="h-6 w-6 text-white"
                 fill="none"
@@ -38,15 +38,15 @@ export default function ContactInfo({
               </span>
               <a
                 href={`mailto:${email}`}
-                className="text-adaptive hover:text-adaptive-accent font-medium transition-colors duration-300 hover:underline"
+                className="text-adaptive  font-medium transition-colors duration-300 "
               >
                 {email}
               </a>
             </div>
           </div>
 
-          <div className="group flex items-center gap-4 hover:scale-105 transition-transform duration-300">
-            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+          <div className="group flex items-center gap-4  transition-transform duration-300">
+            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg  transition-shadow duration-300">
               <svg
                 className="h-6 w-6 text-white"
                 fill="none"
@@ -68,15 +68,15 @@ export default function ContactInfo({
               </span>
               <a
                 href={`tel:${phone}`}
-                className="text-adaptive hover:text-adaptive-accent font-medium transition-colors duration-300 hover:underline"
+                className="text-adaptive  font-medium transition-colors duration-300 "
               >
                 {phone}
               </a>
             </div>
           </div>
 
-          <div className="group flex items-center gap-4 hover:scale-105 transition-transform duration-300">
-            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+          <div className="group flex items-center gap-4  transition-transform duration-300">
+            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg  transition-shadow duration-300">
               <svg
                 className="h-6 w-6 text-white"
                 fill="none"

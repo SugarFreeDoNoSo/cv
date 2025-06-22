@@ -1,4 +1,6 @@
-import EducationItemComponent, { EducationItem } from "./items/EducationItem";
+import EducationItemComponent, {
+  type EducationItem,
+} from "./items/EducationItem";
 
 interface EducationProps {
   education: EducationItem[];
