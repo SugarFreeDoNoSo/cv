@@ -1,61 +1,47 @@
 ### **Matías Donoso Q.**
 ## **Desarrollador de Software**
-  - **Correo:** matias.donoso.q@gmail.com
-  - **Número:** \+569 7756 2527
-  - **Ubicación:** Santiago de Chile
+- **Correo:** matias.donoso.q@gmail.com
+- **Teléfono:** +56977562527
+- **Ubicación:** Santiago de Chile
 
-### **Perfil Profesional**
-  Ingeniero de Software proactivo y orientado a resultados, con sólida experiencia en programación de alto rendimiento, inteligencia artificial y desarrollo de software empresarial. Especializado en la implementación de soluciones tecnológicas innovadoras y eficientes. Demostrada capacidad para el trabajo autónomo y colaborativo, liderando equipos y fomentando ambientes constructivos. Alta adaptabilidad y aprendizaje rápido de nuevas tecnologías, con un enfoque analítico para la resolución de problemas complejos.
+### **Perfil profesional**
+Uso la Ingeniería de Software para solucionar problemas. Soy naturalmente proactivo. Busco orientar mi trabajo a dar un resultado real y no trabajar por trabajar. Me involucro a fondo en el proyecto: entenderlo, buscar mejoras, ya sea realizar un refactor completo o simplemente decir, “¿y si envío un mail a unos clientes y lo arreglamos con calma?”. Conmigo tendrán un profesional ambicioso; por eso solo aceptaré proyectos a la altura de mis objetivos.
 
-## **Habilidades Técnicas Clave**
-- **Lenguajes:** Python, Typescript, Rust, SQL,
-- **Frameworks/Librerías:** React.js, Next.js, Nest.js, Django, FastAPI, Flask,Celery, Electron.js, Pytorch, Tensor Flow,
-- **Bases de Datos:** PostgreSQL, SQLite, MySQL, NoSQL (KV Stores).
-- **Cloud/DevOps:** AWS, GCP, Contenedores, Docker, orquestadores, kubernetes, CI/CD, Serverless, Functions  (Lambda), Storage (s3),
-- **Herramientas/Otros:** Git, Open-API, Graph-QL, API Rest, Sentry, Firebase, Linux, Simulaciones Computacionales, OpenFOAM, CUDA
+## **Habilidades principales**
+- **Lenguajes:** Python, Rust, TypeScript, JavaScript
+- **Frameworks y Herramientas:** Next.js, Vite, React, NestJS, FastAPI, Django
+- **Bases de datos y Almacenamiento:** SQL, KV, Redis, Vectors, Blob Storage
+- **Cloud & DevOps:** GCP, AWS, Docker, Kubernetes, GitHub
+- **APIs & Versionamiento:** GraphQL, API REST, Git
+- **IA & LLMs:** OpenAI, Vertex AI, Llama‑Index, LangChain
 
-## **Experiencia Laboral**
+## **Experiencia laboral**
 
-### **Maifud | Programador Full Stack**
-  > Marzo 2025 \- Actual
+### **Ingeniero de Software Ssr. Full Stack | StreetDevs**
+*Marzo 2025 - Septiembre 2025*
+Trabajo en desarrollo, mantenimiento y soporte de plataformas frontend y backend para el cliente Maifud. Decidí abandonar el proyecto para buscar oportunidades de mayor desarrollo profesional.
 
-Liderazgo técnico en el desarrollo y mantenimiento integral (frontend/backend) de la plataforma.
-Provisión de soporte TI y resolución de incidencias operativas.
-### **GetAgil | Programador Full Stack**
-> Octubre 2024 \- Enero 2025
+### **Desarrollador Full Stack | GetAgil**
+*Octubre 2024 - Febrero 2025*
+Mantuve 51 proyectos en solitario, llegando a desarrollar APIs de bajo nivel propias para corregir problemas de infraestructura después de descartar alternativas pragmáticas. Casos de éxito: disminución de costos de AWS de 300 USD a 0, reducción de tiempos de ejecución de 30 s o más (timeouts) a 100 ms y eliminación de los downtimes que producían pérdidas de clientes semanalmente.
 
-Responsable de la arquitectura y desarrollo del sistema completo, gestionando servicios frontend (React) y backend (Node.js).
-Administración de bases de datos relacionales y NoSQL (KV).
-Diseño, implementación y mantenimiento de funciones serverless, incluyendo optimizaciones de alto rendimiento a bajo nivel (Rust).
-#### **Logros Destacados:**
-Optimización crítica de API: Incremento de velocidad x10, escalabilidad total y reducción de costos operativos en \~99.9%.
-Estabilización del servicio: Reducción de la tasa de fallos del 10% al 0% mediante la implementación de soluciones automatizadas.
+### **Desarrollador Full Stack | Busho**
+*Mayo 2024 - Agosto 2024*
+Fui parte del desarrollo completo junto a un equipo de diseñadores y programadores, donde tomé el liderazgo del proyecto.
 
-### **Busho | Programador Full Stack**
-> Mayo 2024 \- Agosto 2024 | Santiago de Chile
+### **Investigación y desarrollo tecnológico | Castirgalu (España)**
+*Enero 2023 - Marzo 2024*
+Desarrollo de simulaciones computacionales de alta precisión y alto rendimiento con tecnologías web y cloud. Certificación en simulación de dinámica de fluidos computacional (CFD) en C++.
 
-Asunción de liderazgo técnico para estructurar y dirigir el desarrollo en un equipo de reciente formación.
-Implementación de frameworks, tecnologías clave y definición de buenas prácticas (CI/CD, Agile).
-Fomento de la cohesión del equipo y mantenimiento de un ambiente de trabajo productivo.
+### **Desarrollador Jr. Full Stack | S3 Chile**
+*Agosto 2022 - Diciembre 2022*
+Participé en el desarrollo web con Angular 8 y SQL, trabajando principalmente en frontend.
 
-### **Castirgalu | Desarrollador Senior de Software**
-> Abril 2023 \- Abril 2024 | Remoto (España)
-
-Resolución de desafíos técnicos complejos en física moderna aplicada a la metalurgia mediante simulaciones computacionales.
-Contribución técnica a proyectos de investigación académica de alto impacto internacional.
-
-### **S3chile | Desarrollador Jr. Full Stack**
-> Agosto 2022 \- Mayo 2023 | Santiago de Chile
-
-Participación activa en el ciclo completo de desarrollo de software, adquiriendo experiencia en diversas tecnologías y metodologías.
-
-### **S3 Chile | Practicante de Ciencia de Datos**
-> Julio 2022 \- Agosto 2022 | Santiago de Chile
-
-Aplicación práctica de técnicas de Deep Learning generativo en un entorno profesional.
+### **Practicante de Ciencia de Datos | S3 Chile**
+*Julio 2022 - Agosto 2022*
+Desarrollé un modelo de Speech-2-text junto a la automatización de procesamiento de un set de datos de clientes.
 
 ## **Educación**
-### **Universidad de Santiago de Chile | Licenciatura en Ciencia de la Computación**
-> 2018 \- 2024 | Santiago de Chile
-
+### **Licenciatura en Ciencia de la Computación | Universidad de Santiago de Chile**
+*2018 - 2024*
 Formación sólida en fundamentos de ciencias de la computación, algoritmos, estructuras de datos y paradigmas de programación. Destacada habilidad para la aplicación práctica del conocimiento teórico en la resolución de problemas.
